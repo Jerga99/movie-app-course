@@ -16,21 +16,37 @@ const Home = () => (
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossOrigin="anonymous"></script>
     </Head>
     <Navbar />
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-3">
-          <SideMenu />
-        </div>
-        <div className="col-lg-9">
-          <Carousel />
-          <div className="row">
-            <MovieList />
+    <div className="home-page">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-3">
+            <SideMenu />
+          </div>
+          <div className="col-lg-9">
+            <Carousel />
+            <div className="row">
+              <MovieList />
+            </div>
           </div>
         </div>
       </div>
     </div>
     <Footer />
+    <style jsx>{`
+      .home-page {
+        padding-top: 80px;
+      }
+    `}
+    </style>
   </div>
 )
 
 export default Home
+
+
+
+
+
+
+
+
