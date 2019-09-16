@@ -14,9 +14,11 @@ class MovieList extends React.Component {
     this.state = {
       count: 0
     }
+
+    // this.increment = this.increment.bind(this)
   }
 
-  increment = () => {
+  increment() {
     // const count = this.state.count
     const { count } = this.state
     // VERY BAD
@@ -37,7 +39,7 @@ class MovieList extends React.Component {
       <React.Fragment>
 
         <div>
-          <button onClick={this.increment} className="btn btn-primary">Increment Number</button>
+          <button onClick={() => this.increment()} className="btn btn-primary">Increment Number</button>
           <button onClick={this.decrement} className="btn btn-primary">Decrement Number</button>
 
           <h1>{this.state.count}</h1>
