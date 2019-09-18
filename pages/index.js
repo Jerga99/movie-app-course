@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+
+
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import SideMenu from '../components/sideMenu'
@@ -10,11 +12,21 @@ import { getMovies } from '../actions'
 
 const Home = () => {
   const [movies, setMovies] = useState([])
+  const [count, setCount] = useState(0)
 
-  // improve this because now it's called everytime!
-  getMovies().then((movies) => {
-    setMovies(movies)
-  })
+  useEffect(() => {
+    const fetchData = async () => {
+      const resMovies = await getMovies()
+      setMovies(resMovies)
+    }
+
+    fetchData();
+
+    // getMovies().then((movies) => {
+    //   setMovies(movies)
+    // })
+
+  }, [count])
 
   return (
     <div>
@@ -28,6 +40,7 @@ const Home = () => {
       <Navbar />
       <div className="home-page">
         <div className="container">
+          <button onClick={() => setCount(count)}>Click Me!</button>
           <div className="row">
             <div className="col-lg-3">
               <SideMenu
