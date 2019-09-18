@@ -9,9 +9,12 @@ import Footer from '../components/footer'
 import { getMovies } from '../actions'
 
 const Home = () => {
+  const [movies, setMovies] = useState([])
 
   // improve this because now it's called everytime!
-  const movies = getMovies()
+  getMovies().then((movies) => {
+    setMovies(movies)
+  })
 
   return (
     <div>
