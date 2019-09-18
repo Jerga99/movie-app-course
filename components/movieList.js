@@ -15,7 +15,7 @@ class MovieList extends React.Component {
   renderMovies(movies) {
     return movies.map(movie =>
       (
-        <div className="col-lg-4 col-md-6 mb-4">
+        <div key={movie.id} className="col-lg-4 col-md-6 mb-4">
           <div className="card h-100">
             <a href="#"><img className="card-img-top" src={movie.image} alt="" /></a>
             <div className="card-body">
