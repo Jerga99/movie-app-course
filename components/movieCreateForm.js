@@ -4,8 +4,9 @@ import { useState } from 'react'
 
 
 
-const MovieCreateForm = () => {
+const MovieCreateForm = (props) => {
 
+  // fix uncontrolled data!
   const [form, setForm] = useState({
     name: 'Some Movie',
     description: 'Some Description'
@@ -22,7 +23,6 @@ const MovieCreateForm = () => {
   }
 
   const handleGenreChange = (event) => {
-    debugger
     const { options } = event.target
     const optionsLength = options.length
     let value = []
@@ -39,9 +39,12 @@ const MovieCreateForm = () => {
     })
   }
 
+  const submitForm = () => {
+    props.handleFormSubmit({...form})
+  }
+
   return (
     <form>
-      { JSON.stringify(form)}
       <div className="form-group">
         <label for="name">Name</label>
         <input
@@ -125,6 +128,7 @@ const MovieCreateForm = () => {
           <option>action</option>
         </select>
       </div>
+      <button onClick={submitForm} type="button" className="btn btn-primary">Create</button>
     </form>
   )
 }
