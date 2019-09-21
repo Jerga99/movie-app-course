@@ -9,13 +9,15 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+const moviesData = require('./data.json')
+
 app.prepare().then(() => {
 
   const server = express();
   server.use(bodyParser.json())
 
   server.get('/api/v1/movies', (req, res) => {
-    return res.json({message: 'Hello World'})
+    return res.json(moviesData)
   })
 
   server.post('/api/v1/movies', (req, res) => {
