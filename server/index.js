@@ -20,15 +20,17 @@ app.prepare().then(() => {
     return res.json(moviesData)
   })
 
+  server.get('/api/v1/movies/:id', (req, res) => {
+    const { id } = req.params
+    const movie = moviesData.find(m => m.id === id)
+
+    return res.json(movie)
+  })
+
   server.post('/api/v1/movies', (req, res) => {
     const movie = req.body
     console.log(JSON.stringify(movie))
     return res.json({...movie, createdTime: 'today', author: 'Filip'})
-  })
-
-  server.patch('/api/v1/movies/:id', (req, res) => {
-    const { id } = req.params
-    return res.json({message: `Updating post of id: ${id}`})
   })
 
   server.delete('/api/v1/movies/:id', (req, res) => {
