@@ -30,15 +30,5 @@
     "longDesc": "looooooongs desc",
     "genre": "adventure,historical",
     "id": "dkbm7"
-  },
-  {
-    "name": "Random Movie",
-    "description": "Random Movie Desc",
-    "rating": "4",
-    "image": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-    "cover": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-    "longDesc": "asdadasdadasdas",
-    "genre": "drama,music",
-    "id": "pg6zi"
   }
 ]
