@@ -51,6 +51,13 @@ export const deleteMovie = (id) => {
 
 
 
+export const getPosts = () => {
+  return axios.get(`${BASE_URL}/api/v1/posts`).then(res => res.data)
+}
+
+
+
+
 
 
 
