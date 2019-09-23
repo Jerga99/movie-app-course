@@ -35,7 +35,7 @@ const Home = (props) => {
                 changeCategory={changeCategory}
                 activeCategory={filter}
                 categories={categories}
-                appName={"Movie DB"}
+                appName={"Categories"}
               />
             </div>
             <div className="col-lg-9">
